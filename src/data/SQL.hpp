@@ -1,6 +1,7 @@
 #ifndef SQL_hpp
 #define SQL_hpp
-#include "../core/pch.hpp"
+
+#include "../core/include.hpp"
 
 
 typedef struct SQLQueryOutput {
@@ -17,7 +18,10 @@ typedef struct SQLConnection {
       this->password = password;
       this->database = database;
    }
+
+
 }SQLConnection;
+
 
 std::tuple<bool, MYSQL *> SQLSetupInit(SQLConnection sqlLogin);
 SQLQueryOutput SQLQuery(MYSQL *connection, const std::string &query);

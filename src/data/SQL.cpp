@@ -38,7 +38,8 @@ SQLQueryOutput SQLQuery(MYSQL *conn, const std::string &query) {
    }
 
    return {
-      success = success,
+      success,
       mysql_use_result(conn)
    };
+
 }
