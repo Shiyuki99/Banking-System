@@ -1,3 +1,7 @@
 ./src/core/pch.hpp.gch
 ./src/core/main.o
 ./src/data/*.o
+./tests/test.o
+./tests/'SELECT * FROM Users;.sql'
+./tests/main.out
+./main.out
