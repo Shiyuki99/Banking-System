@@ -1,0 +1,4 @@
+ALTER TABLE Users DROP COLUMN Password;
+-- @Block
+ALTER TABLE Users
+ADD COLUMN Password VARCHAR(64) NOT NULL;

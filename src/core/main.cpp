@@ -1,6 +1,7 @@
 #include "pch.hpp"
 
-std::array<std::string, 3> userData = { "moka", "password", "100000" };
+Account *User = nullptr;
+const MYSQL *connection = DB::Login();
 
 void *start() {
    std::cout << "\t---WELCOME TO THE BANK---" << std::endl;
@@ -18,20 +19,24 @@ void *start() {
 
    }
    if (answer == 0) {
-      return NULL;
+      return nullptr;
    }
 
-   Account user(answer);
+   User = new Account(answer);
 
 }
-std::string username = "moka";
+
+
+void *end() {
+   free(User);
+   free(connection);
+
+   return nullptr;
+}
 
 int main(int argc, char **argv) {
-   (void)argc;
-   (void)argv;
-   //hello
-   DB::SearchUser(DB::Login(), username);
-   return 0;
+   start();
 
-   return 0;
+
+   end();
 }

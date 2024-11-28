@@ -7,7 +7,7 @@
 
 namespace DB {
    MYSQL *Login();
-   bool AddUser(MYSQL *connection, const std::array<std::string, 3> &in_UserData);
+   unsigned int AddUser(MYSQL *connection, const std::array<std::string, 2> &in_UserData);
    bool SearchUser(MYSQL *connection, const std::string &username);
 }
 

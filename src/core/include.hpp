@@ -6,11 +6,15 @@
 #include <string>
 #include <vector>
 #include <random>
-#include <openssl/sha.h>
 #include <memory>
 #include <math.h>
 #include <sstream>
 #include <cstring>
+
+// opesssl 
+
+#include "openssl/evp.h"
+
 
 
 // SQL data base

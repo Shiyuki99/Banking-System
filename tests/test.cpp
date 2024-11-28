@@ -1,7 +1,8 @@
 #include <gtest/gtest.h>
 #include "../src/data/database.hpp"
+#include "../src/core/myfunctions.hpp"
 
-std::array<std::string, 3> userData = { "Nasro", "1234", "99999999.99" };
+std::array<std::string, 2> userData = { "Nasro",  "123" };
 
 
 
@@ -16,6 +17,9 @@ int main(int argc, char **argv) {
    (void)argv;
    /* ::testing::InitGoogleTest(&argc, argv);
    return RUN_ALL_TESTS(); */
-   DB::AddUser(DB::Login(), userData);
+   MYSQL *conn = DB::Login();
+   DB::AddUser(conn, userData);
+
+   mysql_close(conn);
    return 0;
 }

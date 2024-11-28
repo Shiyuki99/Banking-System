@@ -1,5 +1,5 @@
 CC = g++
-LIBS = -lmariadb -lgtest -lgtest_main -lpthread
+LIBS = -lmariadb -lgtest -lgtest_main -lpthread -lssl
 FLAGS = -g
 
 TARGET = test
@@ -12,8 +12,8 @@ test.o: ${TARGET}.cpp
 	${CC} ${FLAGS} ${LIBS} -c ${TARGET}.cpp -o ${TARGET}.o
 
 SQL.o: ../src/data/SQL.cpp
-	${CC} ${FLAGS} ${LIBS} -c ../src/data/SQL.cpp -o ../src/data/SQL.o
+	${CC} $(FLAGS) ${LIBS} -c ../src/data/SQL.cpp -o ../src/data/SQL.o
 
 database.o: ../src/data/database.cpp
-	${CC} ${FLAGS} ${LIBS} -c ../src/data/database.cpp -o ../src/data/database.o
+	${CC} $(FLAGS) ${LIBS} -c ../src/data/database.cpp -o ../src/data/database.o
 
