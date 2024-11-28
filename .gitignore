@@ -5,3 +5,4 @@
 ./tests/'SELECT * FROM Users;.sql'
 ./tests/main.out
 ./main.out
+./BANK.session.sql
